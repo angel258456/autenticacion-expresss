@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 const carritoRouter= require("./routes/carrito")
 const productosRouter = require("./routes/productos");
+var authRouter = require('./routes/auth');
 app.use(cors())
 app.use(express.json());
 app.use(
@@ -12,7 +13,7 @@ app.use(
   })
 );
 
-
+app.use('/', authRouter);
 app.use("/productos", productosRouter);
 /* Error handler middleware */
 app.use((err, req, res, next) => {
