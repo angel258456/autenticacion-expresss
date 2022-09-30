@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productos = require('../services/productos');
-
+/*solo es un comentario en productos 
 /* GET productos */
 router.get('/', async function(req, res, next) {
   try {
